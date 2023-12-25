@@ -5,18 +5,18 @@ require_relative "lib/dolphin/version"
 Gem::Specification.new do |spec|
   spec.name          = "dolphin"
   spec.version       = Dolphin::VERSION
-  spec.authors       = ["wb_huangzhihao02"]
-  spec.email         = ["wb_hunagzhihao02@meituan.com"]
+  spec.authors       = ["Coderhuang"]
+  spec.email         = ["2282802627@qq.com"]
 
   spec.summary       = "下载抖音视频"
   spec.description   = "通过抖音分享链接下载对应的视频"
-  spec.homepage      = "https://github.com/HZHCoder1990/dolphin.git"
+  spec.homepage      = "https://github.com/HZHCoder1990/dolphin"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/HZHCoder1990/dolphin.git"
-  spec.metadata["changelog_uri"] = "https://github.com/HZHCoder1990/dolphin.git"
+  spec.metadata["source_code_uri"] = "https://github.com/HZHCoder1990/dolphin"
+  spec.metadata["changelog_uri"] = "https://github.com/HZHCoder1990/dolphin"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -25,8 +25,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  # spec.executables << 'dolphin'
+  spec.executables   = "dolphin"
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rest-client", "~>2.1.0"
