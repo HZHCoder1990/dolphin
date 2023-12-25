@@ -1,6 +1,7 @@
 
-require 'claide'
 module Dolphin
+  require 'claide'
+
   class Command < CLAide::Command
 
     self.abstract_command = true

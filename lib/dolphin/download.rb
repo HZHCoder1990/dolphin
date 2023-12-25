@@ -1,5 +1,6 @@
 require 'claide'
 
+
 module Dolphin
   class Command
     class Download < CLAide::Command
@@ -28,17 +29,12 @@ module Dolphin
         unless urls.empty?
           require 'rest-client'
           require 'colored2'
-          require 'dolphin/command/constant'
+          require_relative './constant'
+
           # 2.解析下载链接
           response = RestClient.get(ANALYSE_PREFIX + urls[0] , HEADERS)
-
-          video_url = begin
-                           if response['success'].is_a?(TrueClass)
-                             response['video']
-                           else
-                             ''
-                           end
-                         end
+          json_obj =  JSON.parse(response)
+          video_url =  json_obj['video']
           if video_url.length > 0
             # 3.下载
             video_data = RestClient.get(video_url)
@@ -73,3 +69,4 @@ module Dolphin
 
   end
 end
+
